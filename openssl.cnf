@@ -1,0 +1,20 @@
+[ req ]
+default_bits        = 2048 
+req_extensions      = v3_req
+x509_extensions     = v3_ca
+
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment
+
+[ v3_ca ]
+basicConstraints = CA:TRUE
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+
+[ v3_client ]
+basicConstraints = CA:FALSE
+keyUsage = critical, digitalSignature, nonRepudiation, keyEncipherment
+extendedKeyUsage = clientAuth, emailProtection
+nsCertType = client, email
+
